@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b140f" />
+  <title>Evaluación de Lengua Castellana y Originaria 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  <style>
+:root{color-scheme:dark;--g900:#0a3a22;--g800:#a8dcbc;--g700:#2f8a57;--g600:#2c7a4d;--g500:#3fae6c;--g100:#183223;--ink:#e1e9e4;--muted:#98ad9f;--line:#2f4439;--red:#e0786e;
+--metal:linear-gradient(165deg,#1f2e26 0%,#17251d 45%,#111d16 60%,#1b2a22 100%);
+--green-metal:linear-gradient(180deg,#228048 0%,#145c35 49%,#0d4a2b 51%,#15663a 100%);
+--silver:linear-gradient(180deg,#d3dbd6 0%,#aebab3 49%,#9aa89f 51%,#bcc7c0 100%)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Barlow','Segoe UI',system-ui,sans-serif;font-size:17px;line-height:1.5;color:var(--ink);min-height:100vh;background:repeating-linear-gradient(90deg,rgba(255,255,255,.022) 0 1px,transparent 1px 4px),linear-gradient(180deg,#0f1c15,#0a130e);background-attachment:fixed}
+h1,h2,h3{font-family:'Rajdhani','Segoe UI',sans-serif}
+.container{max-width:940px;margin:0 auto;padding:22px 14px 30px}
+.hidden{display:none!important}
+:focus-visible{outline:3px solid var(--g500);outline-offset:2px}
+.topbar{position:relative;overflow:hidden;background:linear-gradient(180deg,#1a6a3e 0%,#0f4d2e 49%,#093a22 51%,#0e4a2b 100%);border-bottom:3px solid #86968d;box-shadow:0 12px 22px -12px rgba(0,0,0,.7)}
+.topbar::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.22) 50%,transparent 65%);transform:translateX(-110%);animation:sheen 1.7s .3s ease-out 1 forwards;pointer-events:none}
+@keyframes sheen{to{transform:translateX(110%)}}
+.topbar-in{max-width:940px;margin:0 auto;padding:14px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:16px;color:#e8efea}
+.brand h1{font-size:1.55rem;font-weight:800;line-height:1.1;text-shadow:0 1px 0 rgba(0,0,0,.45)}
+.brand p{color:#b9d0c2;font-size:.98rem}
+.crest{width:58px;height:66px;flex:none;display:flex;align-items:center;justify-content:center;padding-bottom:10px;font-size:.72rem;font-weight:700;color:#0d2418;text-align:center;background:var(--silver);clip-path:polygon(0 0,100% 0,100% 58%,50% 100%,0 58%)}
+.crest img{width:100%;height:100%;object-fit:contain;display:block}
+.crest.has-img{background:none;clip-path:none;padding:0}
+.crest.lg{width:88px;height:100px;margin:0 auto;font-size:.85rem}
+.crest-ghost{display:none;position:absolute;right:-20px;bottom:-30px;width:280px;height:320px;opacity:.08;pointer-events:none;clip-path:none;background:none}
+.crest-ghost.has-img{display:block}
+.panel{position:relative;overflow:hidden;background:var(--metal);border:1px solid var(--line);border-radius:10px;padding:28px;margin-bottom:22px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 14px 26px -16px rgba(0,0,0,.7)}
+.screen{animation:enter .3s ease both}
+@keyframes enter{from{opacity:0;transform:translateY(6px)}}
+.title{font-size:1.75rem;font-weight:700;color:var(--g800);line-height:1.15;margin-bottom:6px}
+.sub{color:var(--muted);margin-bottom:22px;max-width:60ch}
+.login-grid{position:relative;display:grid;grid-template-columns:1.5fr 1fr;gap:34px}
+@media(max-width:760px){.login-grid{grid-template-columns:1fr;gap:20px}}
+.rules{border-left:3px solid var(--g700);padding-left:18px;align-self:start;margin-top:6px}
+.rules h3{font-size:1.25rem;color:var(--g800);margin-bottom:10px}
+.rules li{list-style:none;margin-bottom:10px}
+.field{margin-bottom:18px}
+label,.lbl{display:block;font-weight:700;color:var(--g800);margin-bottom:6px}
+.input-field,.select-field{width:100%;background:#0e1913;border:1.5px solid #3a5245;border-radius:6px;padding:11px 14px;font:inherit;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s}
+.input-field::placeholder{color:#6f857a}
+.input-field:focus,.select-field:focus{border-color:var(--g500);box-shadow:0 0 0 3px rgba(63,174,108,.25)}
+.input-error{border-color:var(--red)!important}
+.pills{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:18px}
+@media(max-width:520px){.pills{grid-template-columns:repeat(3,1fr)}}
+.pill-btn{font:inherit;font-weight:700;padding:10px 4px;border:1.5px solid #3a5245;border-radius:6px;background:var(--metal);color:var(--ink);cursor:pointer;transition:transform .12s,border-color .12s}
+.pill-btn:hover{border-color:var(--g500);transform:translateY(-1px)}
+.pill-btn:active{transform:translateY(1px)}
+.pill-btn.active-course,.pill-btn.active-parallel{background:var(--green-metal);border-color:#3fae6c;color:#f0f5f2;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 6px 12px -6px rgba(0,0,0,.8)}
+.btn{font:inherit;font-weight:700;font-size:1.05rem;border:1px solid #3fae6c;border-radius:6px;padding:13px 22px;cursor:pointer;color:#f0f5f2;background:var(--green-metal);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 8px 16px -10px rgba(0,0,0,.9);transition:transform .12s,filter .12s}
+.btn:hover{filter:brightness(1.12)}
+.btn:active{transform:translateY(1px)}
+.btn.block{width:100%}
+.btn-silver{color:#0d2418;border-color:#7d8d84;background:var(--silver);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 6px 12px -10px rgba(0,0,0,.8);font-size:.98rem}
+.btn-ghost{background:transparent;color:#e8efea;border-color:rgba(232,239,234,.6);box-shadow:none;font-size:.95rem;padding:9px 16px}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.alert-banner{display:none;padding:11px 14px;border-radius:6px;font-weight:700;margin-bottom:14px}
+.alert-banner.error{display:block;background:#3a1714;border:1px solid #7d3a34;color:#f2b8b2}
+.alert-banner.success{display:block;background:#14301f;border:1px solid #2f6a47;color:#a8dcbc}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.exam-header{position:sticky;top:8px;z-index:50;background:rgba(15,26,20,.95);backdrop-filter:blur(10px);border:1px solid var(--line);border-top:3px solid var(--g700);border-radius:10px;padding:12px 16px 14px;margin-bottom:20px;box-shadow:0 12px 24px -14px rgba(0,0,0,.9)}
+.eh-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+#headerStudentName{font-family:'Rajdhani','Segoe UI',sans-serif;font-weight:700;font-size:1.25rem;color:var(--g800)}
+.tag{font-weight:700;font-size:.9rem;color:#a8dcbc;background:var(--g100);border:1px solid #2f6a47;border-radius:4px;padding:1px 9px;margin-left:10px}
+.muted{color:var(--muted);font-size:.92rem}
+.eh-prog{display:flex;align-items:center;gap:12px;margin:8px 0 10px}
+.eh-prog span{font-weight:700;color:var(--muted);white-space:nowrap}
+.progress-bar-bg{flex:1;height:10px;border-radius:99px;background:linear-gradient(180deg,#070d09,#16231c);box-shadow:inset 0 1px 3px rgba(0,0,0,.7);overflow:hidden}
+.progress-bar-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(180deg,#3fae6c 0%,#228048 49%,#17663a 51%,#2c9158 100%);transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.qnav{display:flex;flex-wrap:wrap;gap:5px}
+.qnav button{font:inherit;font-weight:700;font-size:.85rem;width:30px;height:28px;border-radius:4px;border:1px solid #34493d;background:#0e1913;color:var(--muted);cursor:pointer;transition:background .25s,color .25s,transform .15s}
+.qnav button.done{background:var(--green-metal);border-color:#3fae6c;color:#f0f5f2}
+.qnav button.now{outline:2px solid #8fd1a8;outline-offset:1px;transform:translateY(-2px)}
+.question-card{display:grid;grid-template-columns:60px 1fr;background:var(--metal);border:1px solid var(--line);border-radius:10px;margin-bottom:16px;overflow:hidden;scroll-margin-top:170px;box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 10px 20px -14px rgba(0,0,0,.8);transition:border-color .25s}
+.q-rail{display:flex;justify-content:center;padding-top:16px;background:linear-gradient(180deg,#23352b,#18261f);border-right:1px solid var(--line);transition:background .3s}
+.q-rail span{font-family:'Rajdhani','Segoe UI',sans-serif;font-weight:800;font-size:1.7rem;line-height:1;color:var(--g800);transition:color .3s}
+.question-card.answered{border-color:#2f6a47}
+.question-card.answered .q-rail{background:var(--green-metal);border-right-color:#3fae6c}
+.question-card.answered .q-rail span{color:#f0f5f2}
+.q-body{padding:18px 20px}
+.q-title{font-family:'Barlow','Segoe UI',sans-serif;font-size:1.15rem;font-weight:500;line-height:1.4;margin-bottom:14px;color:#eaf0ec}
+.options-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:640px){.options-grid{grid-template-columns:1fr}.question-card{grid-template-columns:42px 1fr}.q-body{padding:14px}}
+.option-btn{display:flex;gap:10px;align-items:flex-start;text-align:left;font:inherit;color:var(--ink);background:#0f1b14;border:1.5px solid #34493d;border-radius:6px;padding:10px 12px;cursor:pointer;transition:border-color .15s,background .15s}
+.option-btn:hover{border-color:var(--g500);background:#14261c}
+.opt-letter{flex:none;width:26px;height:26px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#0d2418;background:var(--silver);border:1px solid #7d8d84}
+.option-btn.selected{border-color:var(--g500);background:#173324;box-shadow:0 0 0 2px rgba(63,174,108,.3);animation:pick .22s ease}
+.option-btn.selected .opt-letter{background:var(--green-metal);color:#f0f5f2;border-color:#3fae6c}
+@keyframes pick{50%{transform:scale(.985)}}
+.score-banner{text-align:center;padding:24px 18px;border-radius:8px;margin-bottom:18px;color:#e8efea;background:linear-gradient(180deg,#1a6a3e 0%,#0f4d2e 49%,#093a22 51%,#0e4a2b 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}
+.score-banner h2{font-size:1.7rem;font-weight:800}
+.score-banner p{color:#b9d0c2}
+.score-circle{--p:0%;width:150px;height:150px;border-radius:50%;margin:16px auto;display:flex;align-items:center;justify-content:center;background:conic-gradient(#d3dbd6 var(--p),rgba(255,255,255,.16) 0);box-shadow:0 10px 24px rgba(0,0,0,.5)}
+.score-inner{width:122px;height:122px;border-radius:50%;background:linear-gradient(165deg,#1f2e26,#101a14);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--g800)}
+.score-big{font-family:'Rajdhani','Segoe UI',sans-serif;font-size:2.9rem;font-weight:800;line-height:1}
+.score-max{font-size:.9rem;color:var(--muted)}
+.stats-row{display:flex;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.stat-box{padding:2px 24px;text-align:center}
+.stat-box+.stat-box{border-left:1px solid rgba(255,255,255,.25)}
+.stat-box small{display:block;color:#b9d0c2}
+.stat-box strong{font-size:1.1rem}
+.sync-status{display:none;margin:0 0 16px;padding:10px 14px;border-radius:6px;font-weight:700}
+.action-buttons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.reset-auth-box{margin-top:16px;padding:16px;border-radius:8px;background:#0f1b14;border:1.5px solid #3a5245}
+.reset-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.reset-row .input-field{flex:1;min-width:200px;width:auto}
+.review-item{padding:14px 18px;margin-bottom:10px;background:#0f1b14;border:1px solid var(--line);border-left:5px solid var(--g500);border-radius:6px}
+.review-item.wrong{border-left-color:#d0554a;background:#221413}
+.status-chip{display:block;font-weight:800;font-size:.9rem;margin-bottom:3px}
+.status-chip.ok{color:#7fd1a0}.status-chip.fail{color:#f0958c}
+.rv-q{font-weight:700;margin-bottom:4px}.rv-a{color:var(--muted)}.rv-c{color:var(--g800);font-weight:700;margin-top:2px}
+pre.code-box{background:#070d09;color:#bfe0cc;border:1px solid var(--line);border-radius:6px;padding:14px;font:.82rem Consolas,monospace;overflow-x:auto;white-space:pre-wrap;margin:12px 0}
+summary{cursor:pointer;color:var(--g800);font-weight:700}
+.foot{text-align:center;color:var(--muted);font-size:.92rem;padding:4px 0 26px}
+
+.topbar::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 22px),repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 22px),linear-gradient(90deg,transparent,rgba(143,209,168,.95),transparent);background-size:auto,auto,30% 2px;background-repeat:repeat,repeat,no-repeat;background-position:0 0,0 0,-40% 100%;animation:scan 5s linear infinite}
+@keyframes scan{to{background-position:0 0,0 0,140% 100%}}
+.topbar-in{position:relative;padding:18px 14px}
+.brand{gap:22px}
+.brand h1{font-size:1.95rem;letter-spacing:.02em}
+.brand p{font-size:1.02rem}
+.crest-fx{position:relative;width:140px;height:140px;flex:none;display:grid;place-items:center;perspective:520px}
+.crest-fx::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(transparent 0 55%,#8fd1a8 78%,#eef3f0 92%,transparent);-webkit-mask:radial-gradient(closest-side,transparent 94%,#000 95% 99%,transparent 100%);mask:radial-gradient(closest-side,transparent 94%,#000 95% 99%,transparent 100%);animation:spin 6s linear infinite}
+.crest-fx::after{content:"";position:absolute;inset:7px;border-radius:50%;border:1px solid rgba(214,226,219,.3);box-shadow:0 0 30px rgba(63,174,108,.35),inset 0 0 24px rgba(63,174,108,.18);animation:pulse 4s ease-in-out infinite}
+.crest-fx .crest{position:relative;z-index:1;margin:0;width:90px;height:102px;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s ease-out;filter:drop-shadow(0 8px 12px rgba(0,0,0,.55))}
+.crest-fx.lg{width:170px;height:170px;margin:0 auto}
+.crest-fx.lg .crest{width:108px;height:122px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{opacity:.5}}
+@media(max-width:560px){.crest-fx{width:104px;height:104px}.crest-fx .crest{width:66px;height:76px}.brand h1{font-size:1.5rem}}
+.crest-ghost{width:360px;height:400px;opacity:.09}
+.panel::before,.panel::after{content:"";position:absolute;width:16px;height:16px;pointer-events:none;opacity:.75}
+.panel::before{top:8px;left:8px;border-top:2px solid var(--g500);border-left:2px solid var(--g500)}
+.panel::after{bottom:8px;right:8px;border-bottom:2px solid var(--g500);border-right:2px solid var(--g500)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand">
+    <!-- ESCUDO 1: encabezado. Se llena solo con ESCUDO_URL (arriba en el script). -->
+    <div class="crest-fx"><div class="crest" data-crest>Escudo</div></div>
+    <div>
+      <h1 data-school>Unidad Educativa Gran Mariscal de Ayacucho</h1>
+      <p>Evaluación de Lengua Castellana y Originaria, 1ro a 6to de Secundaria, gestión 2026</p>
+    </div>
+  </div>
+  <button type="button" class="btn btn-ghost" onclick="toggleAdminAuth()">Panel docente</button>
+</div></header>
+
+<div class="container">
+  <section id="adminAuthBox" class="panel hidden">
+    <h2 class="title">Acceso docente</h2>
+    <p class="sub">Ingresa la clave docente para configurar Google Sheets o descargar el respaldo CSV.</p>
+    <div id="adminAuthNotice" class="alert-banner"></div>
+    <div class="reset-row">
+      <input type="password" id="adminPassInput" class="input-field" style="flex:1;width:auto" placeholder="Escribe la clave docente" onkeydown="if(event.key==='Enter') verifyAdminPass()" />
+      <button type="button" class="btn btn-silver" onclick="verifyAdminPass()">Desbloquear panel</button>
+    </div>
+  </section>
+
+  <section id="adminPanel" class="panel hidden">
+    <h2 class="title">Conexión con Google Sheets</h2>
+    <p class="sub">El enlace de Google Apps Script ya está integrado. Puedes actualizarlo o descargar el respaldo local.</p>
+    <div id="adminNotice" class="alert-banner"></div>
+    <div class="field">
+      <label for="scriptUrlInput">URL activa de Google Apps Script (termina en /exec)</label>
+      <input type="url" id="scriptUrlInput" class="input-field" placeholder="https://script.google.com/macros/s/AKfycb.../exec" />
+    </div>
+    <div class="row">
+      <button type="button" class="btn btn-silver" onclick="saveScriptUrl()">Guardar URL</button>
+      <button type="button" class="btn btn-silver" onclick="copyAppsScriptCode()">Copiar código para Apps Script</button>
+      <button type="button" class="btn btn-silver" onclick="exportLocalBackupCSV()">Descargar respaldo local (CSV)</button>
+      <button type="button" class="btn btn-silver" onclick="forceUnlockFromAdmin()">Desbloquear examen en este dispositivo</button>
+    </div>
+    <div class="field">
+      <label for="crestFile">Escudo del colegio (PNG)</label>
+      <input type="file" id="crestFile" accept="image/png" class="input-field" onchange="loadCrestFile(this)" />
+      <p class="muted" style="margin-top:6px">Se guarda en este dispositivo. Para dejarlo fijo en todos, sube el archivo escudo.png junto a index.html.</p>
+    </div>
+    <details>
+      <summary>Ver código Google Apps Script (pegar en Extensiones &gt; Apps Script)</summary>
+      <pre id="appsScriptCode" class="code-box">function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  
+  // Crear encabezados automáticamente si la hoja está vacía
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow([
+      "FECHA Y HORA",
+      "NOMBRES Y APELLIDOS",
+      "CURSO",
+      "PARALELO",
+      "CURSO COMPLETO",
+      "PUNTAJE (SOBRE 45)",
+      "ACIERTOS (DE 15)",
+      "PREGUNTAS FALLADAS",
+      "DETALLE DE RESPUESTAS"
+    ]);
+  }
+
+  var data = JSON.parse(e.postData.contents);
+
+  sheet.appendRow([
+    data.fechaHora || new Date().toLocaleString("es-BO"),
+    data.nombre || "",
+    data.curso || "",
+    data.paralelo || "",
+    data.cursoCompleto || "",
+    Number(data.puntaje) || 0,
+    data.aciertosTexto || "",
+    data.preguntasFalladas || "",
+    data.detalleRespuestas || ""
+  ]);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ status: "ok" }))
+    .setMimeType(ContentService.MimeType.JSON);
+}</pre>
+    </details>
+  </section>
+
+  <section id="loginScreen" class="panel screen">
+    <!-- ESCUDO 2: marca de agua grande detrás del registro (solo aparece si hay imagen). -->
+    <div class="crest crest-ghost" data-crest></div>
+    <div class="login-grid">
+      <div>
+        <h2 class="title">Registro del estudiante</h2>
+        <p class="sub">Escribe tu nombre completo y elige tu curso y paralelo para habilitar la evaluación.</p>
+        <div class="field">
+          <label for="studentName">Nombres y apellidos completos</label>
+          <input type="text" id="studentName" class="input-field" placeholder="Ej. Juan Carlos Mamani Quispe" autocomplete="name" />
+        </div>
+        <span class="lbl">Curso</span>
+        <div class="pills">
+          <button type="button" class="pill-btn" id="btnCourse-1ro" onclick="selectCourse('1ro')">1ro Sec.</button>
+          <button type="button" class="pill-btn" id="btnCourse-2do" onclick="selectCourse('2do')">2do Sec.</button>
+          <button type="button" class="pill-btn" id="btnCourse-3ro" onclick="selectCourse('3ro')">3ro Sec.</button>
+          <button type="button" class="pill-btn" id="btnCourse-4to" onclick="selectCourse('4to')">4to Sec.</button>
+          <button type="button" class="pill-btn" id="btnCourse-5to" onclick="selectCourse('5to')">5to Sec.</button>
+          <button type="button" class="pill-btn" id="btnCourse-6to" onclick="selectCourse('6to')">6to Sec.</button>
+        </div>
+        <span class="lbl">Paralelo</span>
+        <div class="pills">
+          <button type="button" class="pill-btn" id="btnPar-A" onclick="selectParallel('A')">A</button>
+          <button type="button" class="pill-btn" id="btnPar-B" onclick="selectParallel('B')">B</button>
+          <button type="button" class="pill-btn" id="btnPar-C" onclick="selectParallel('C')">C</button>
+          <button type="button" class="pill-btn" id="btnPar-D" onclick="selectParallel('D')">D</button>
+          <button type="button" class="pill-btn" id="btnPar-E" onclick="selectParallel('E')">E</button>
+          <button type="button" class="pill-btn" id="btnPar-F" onclick="selectParallel('F')">F</button>
+        </div>
+        <div class="hidden" aria-hidden="true">
+          <input type="text" id="courseInput" class="input-field" oninput="handleCourseText(this.value)" />
+          <select id="parallelSelect" class="select-field" onchange="selectParallel(this.value)">
+            <option value=""></option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option>
+          </select>
+        </div>
+        <div id="loginErrorBox" class="alert-banner"></div>
+        <button type="button" class="btn block" onclick="startExam()">Iniciar evaluación</button>
+      </div>
+      <aside class="rules">
+        <h3>Antes de empezar</h3>
+        <ul>
+          <li>La evaluación tiene 15 preguntas de opción múltiple.</li>
+          <li>Cada respuesta correcta vale 3 puntos. El total es de 45 puntos.</li>
+          <li>Tienes un solo intento en este dispositivo.</li>
+          <li>Al terminar verás tus aciertos y podrás descargar tu reporte en PDF.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="examScreen" class="screen hidden">
+    <div class="exam-header">
+      <div class="eh-top">
+        <div><span id="headerStudentName"></span><span id="headerCourseBadge" class="tag"></span></div>
+        <span class="muted">3 puntos cada una, total 45</span>
+      </div>
+      <div class="eh-prog"><span id="progressCounter">0 / 15</span><div class="progress-bar-bg"><div id="progressBarFill" class="progress-bar-fill"></div></div></div>
+      <div id="qNav" class="qnav" aria-label="Ir a una pregunta"></div>
+    </div>
+    <div id="questionsContainer"></div>
+    <div class="panel" style="text-align:center">
+      <div id="examWarningBox" class="alert-banner"></div>
+      <p class="muted" style="margin-bottom:14px">Verifica haber respondido las 15 preguntas antes de finalizar. Al enviar se generará tu reporte y tu nota se registrará en Google Sheets.</p>
+      <button type="button" id="btnSubmitExam" class="btn block" onclick="submitExam(false)">Finalizar evaluación, generar PDF y enviar puntaje</button>
+    </div>
+  </section>
+
+  <section id="resultScreen" class="panel screen hidden">
+    <div class="score-banner">
+      <!-- ESCUDO 3: pantalla de resultados. -->
+      <div class="crest-fx lg"><div class="crest lg" data-crest>Escudo</div></div>
+      <div id="scoreCircle" class="score-circle"><div class="score-inner"><span id="finalScoreValue" class="score-big">0</span><span class="score-max">de 45 puntos</span></div></div>
+      <h2 id="resultStudentTitle"></h2>
+      <p id="resultMetaInfo"></p>
+      <div class="stats-row">
+        <div class="stat-box"><small>Correctas</small><strong id="statCorrect">0</strong></div>
+        <div class="stat-box"><small>Incorrectas</small><strong id="statWrong">0</strong></div>
+        <div class="stat-box"><small>Emitido</small><strong id="statTimestamp">--</strong></div>
+      </div>
+    </div>
+    <div id="syncNotification" class="sync-status"></div>
+    <div class="action-buttons-grid">
+      <button type="button" class="btn" onclick="generateStudentPDF()">Descargar reporte PDF</button>
+      <button type="button" class="btn btn-silver" onclick="retrySendToGoogleSheets()">Reenviar nota a Google Sheets</button>
+      <button type="button" class="btn btn-silver" onclick="toggleResetPasswordBox()">Reiniciar / Nueva Evaluación (Con Clave)</button>
+    </div>
+    <div id="resetPasswordBox" class="reset-auth-box hidden">
+      <strong style="color:var(--g800)">Reinicio protegido, solo docente</strong>
+      <p class="muted" style="margin-top:4px">El estudiante tiene 1 intento. Ingresa la clave de reinicio para habilitar un nuevo examen en este dispositivo.</p>
+      <div id="resetErrorBanner" class="alert-banner" style="margin-top:10px"></div>
+      <div class="reset-row">
+        <input type="password" id="resetPassInput" class="input-field" placeholder="Clave de reinicio" onkeydown="if(event.key==='Enter') confirmResetWithPassword()" />
+        <button type="button" class="btn btn-silver" onclick="confirmResetWithPassword()">Habilitar nuevo examen</button>
+      </div>
+    </div>
+    <h3 class="title" style="margin:26px 0 12px;font-size:1.45rem">Revisión detallada, aciertos y correcciones</h3>
+    <div id="reviewContainer"></div>
+  </section>
+</div>
+
+<script>
+  // =========================================================================
+  // 1. URL DE TU GOOGLE APPS SCRIPT YA INTEGRADA Y CLAVE DE REINICIO:
+  // =========================================================================
+  // ESCUDO DEL COLEGIO: ruta de la imagen (ej. "escudo.png" en la misma carpeta que este archivo) o una imagen en base64.
+  // Si el archivo no existe, se muestra el marco vacío del escudo.
+  let ESCUDO_URL = "escudo.png";
+  const NOMBRE_COLEGIO = "Unidad Educativa Gran Mariscal de Ayacucho";
+
+  const DEFAULT_GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxJ_OtZ7IyfW4td9cSCrnAM9Rd6gmVrEZzO6fNO2vM8RpWU9jp4U4Bp1TMrKumWrOUR/exec";
+  
+  // Claves válidas para reiniciar el examen o abrir el panel docente:
+  const VALID_RESET_KEYS = ["ayacucho2026irra"];
+
+  // =========================================================================
+  // 2. BASE DE DATOS OFICIAL INTEGRADA (1RO A 6TO DE SECUNDARIA - 90 PREGUNTAS)
+  // =========================================================================
+  const EXAM_DATABASE = {
+    "1ro": [
+      { q: "¿Qué es la comunicación?", options: { a: "Es el proceso de transmitir únicamente información escrita entre las personas.", b: "Es el proceso de intercambiar mensajes, expresar ideas y comprender a los demás.", c: "Es la capacidad de expresar sentimientos exclusivamente mediante gestos.", d: "Es el conjunto de signos que se utilizan para elaborar textos literarios." }, ans: "b" },
+      { q: "¿Quién es el emisor en el proceso comunicativo?", options: { a: "La persona que recibe e interpreta el mensaje.", b: "El medio físico por el cual se transmite la información.", c: "La persona que envía una información mediante un mensaje.", d: "El sistema de signos utilizado para transmitir la información." }, ans: "c" },
+      { q: "¿Qué elemento de la comunicación corresponde a la información que se transmite?", options: { a: "El código.", b: "El canal.", c: "El contexto.", d: "El mensaje." }, ans: "d" },
+      { q: "¿Qué función de la comunicación predomina en una noticia transmitida por la radio?", options: { a: "La función motivadora.", b: "La función informativa.", c: "La función persuasiva.", d: "La función emotiva." }, ans: "b" },
+      { q: "¿Qué función predomina cuando un profesor explica un tema para enseñar nuevos conocimientos?", options: { a: "La función instructiva.", b: "La función reguladora.", c: "La función poética.", d: "La función de interacción social." }, ans: "a" },
+      { q: "¿Cuál de los siguientes ejemplos corresponde a la comunicación escrita?", options: { a: "Explicar oralmente una tarea a los compañeros.", b: "Realizar gestos para expresar alegría.", c: "Enviar un mensaje escrito por correo electrónico.", d: "Utilizar movimientos de las manos para saludar." }, ans: "c" },
+      { q: "¿Qué tipo de comunicación no verbal utiliza los movimientos corporales, los gestos y la mímica?", options: { a: "La comunicación proxémica.", b: "La comunicación iconográfica.", c: "La comunicación paralingüística.", d: "La comunicación kinestésica." }, ans: "d" },
+      { q: "¿Qué nivel de la lengua se caracteriza por utilizar términos técnicos y formales propios de una disciplina?", options: { a: "El nivel común.", b: "El nivel académico o científico.", c: "El nivel coloquial.", d: "El nivel literario." }, ans: "b" },
+      { q: "¿Qué nivel de la lengua se utiliza principalmente para crear obras literarias y embellecer el lenguaje?", options: { a: "El nivel común.", b: "El nivel coloquial.", c: "El nivel académico o científico.", d: "El nivel literario." }, ans: "d" },
+      { q: "¿Cuál es la principal diferencia entre una frase y una oración?", options: { a: "La frase no tiene verbo conjugado y la oración tiene uno o más verbos conjugados.", b: "La frase tiene verbo conjugado y la oración no presenta ningún verbo.", c: "La frase siempre tiene sujeto y predicado, mientras que la oración no.", d: "La frase expresa una idea completa y la oración expresa una idea incompleta." }, ans: "a" },
+      { q: "¿Cómo se clasifican las oraciones según la actitud del hablante?", options: { a: "Simples, compuestas, coordinadas, subordinadas, largas y cortas.", b: "Nominales, verbales, personales, impersonales, activas y pasivas.", c: "Enunciativas, exhortativas, desiderativas, dubitativas, exclamativas e interrogativas.", d: "Afirmativas, negativas, simples, compuestas, afirmativas y dubitativas." }, ans: "c" },
+      { q: "¿Qué es la lengua materna?", options: { a: "La lengua que se aprende exclusivamente en cursos especializados.", b: "La lengua que pertenece a un país diferente al de origen.", c: "La lengua que se aprende de manera innata desde los primeros años de vida.", d: "La lengua que se utiliza solamente en el ámbito educativo." }, ans: "c" },
+      { q: "¿Qué ley boliviana busca combatir el racismo y toda forma de discriminación?", options: { a: "La Ley N.º 045.", b: "La Ley N.º 054.", c: "La Ley N.º 046.", d: "La Ley N.º 044." }, ans: "a" },
+      { q: "¿Qué es la literatura boliviana?", options: { a: "Es el conjunto de obras escritas exclusivamente durante la época republicana.", b: "Es el conjunto de relatos históricos elaborados únicamente por autores extranjeros.", c: "Es el conjunto de manifestaciones orales dedicadas exclusivamente a los mitos.", d: "Es el conjunto de manifestaciones literarias producidas por escritores bolivianos, como cuentos, leyendas, poesías y obras teatrales." }, ans: "d" },
+      { q: "¿Qué obra se menciona como ejemplo del drama inca en la literatura quechua?", options: { a: "Raza de bronce.", b: "Sangre de mestizos.", c: "Ollantay.", d: "Río fugitivo." }, ans: "c" }
+    ],
+    "2do": [
+      { q: "¿Qué es el signo lingüístico?", options: { a: "Es una unidad que relaciona un sujeto con un predicado.", b: "Es una unidad que asocia un significante con un significado.", c: "Es una palabra que expresa únicamente acciones." }, ans: "b" },
+      { q: "¿Quién desarrolló la teoría del signo lingüístico basada en el significante y el significado?", options: { a: "Ferdinand de Saussure.", b: "Serguéi Prokófiev.", c: "Gabriel García Márquez." }, ans: "a" },
+      { q: "¿Cuáles son las categorías gramaticales variables?", options: { a: "Preposiciones, conjunciones, adverbios e interjecciones.", b: "Sustantivos, artículos, adjetivos, pronombres y verbos.", c: "Adverbios, artículos, preposiciones y conjunciones." }, ans: "b" },
+      { q: "¿Cuál es la función principal del artículo?", options: { a: "Expresar una acción realizada por el sujeto.", b: "Reemplazar siempre al verbo de la oración.", c: "Determinar o especificar al sustantivo que acompaña." }, ans: "c" },
+      { q: "¿Cuál de las siguientes opciones contiene únicamente artículos determinados?", options: { a: "El, la, los, las.", b: "Un, una, unos, unas.", c: "Lo, un, la, unos." }, ans: "a" },
+      { q: "¿Qué es una oración simple?", options: { a: "Es una oración que tiene un solo predicado y un verbo conjugado como núcleo.", b: "Es una oración formada necesariamente por dos predicados.", c: "Es un conjunto de palabras que carece de sentido completo." }, ans: "a" },
+      { q: "¿Qué tipo de oración expresa duda, incertidumbre o probabilidad?", options: { a: "Desiderativa.", b: "Dubitativa.", c: "Exhortativa." }, ans: "b" },
+      { q: "¿Qué caracteriza principalmente al género narrativo?", options: { a: "Expresa sentimientos y emociones mediante versos.", b: "Relata una historia mediante acontecimientos presentados por un narrador.", c: "Representa conflictos exclusivamente mediante diálogos.", d: "Transmite conocimientos mediante argumentos y explicaciones." }, ans: "b" },
+      { q: "¿Cuál de los siguientes elementos pertenece al género narrativo?", options: { a: "Narrador, personajes y argumento.", b: "Verso, métrica y tonalidad.", c: "Actos, escenas y escenografía.", d: "Introducción, bibliografía y anexos." }, ans: "a" },
+      { q: "¿Qué caracteriza al género dramático?", options: { a: "Relata acontecimientos mediante un narrador externo.", b: "Representa acciones y conflictos mediante diálogos y actuaciones ante un público.", c: "Expresa sentimientos únicamente mediante la rima.", d: "Explica conocimientos mediante textos argumentativos." }, ans: "b" },
+      { q: "¿Qué es un dramaturgo?", options: { a: "Una persona que escribe obras teatrales.", b: "Una persona que interpreta poemas líricos.", c: "Una persona que relata cuentos tradicionales.", d: "Una persona que estudia únicamente las reglas gramaticales." }, ans: "a" },
+      { q: "¿Cuáles son elementos propios de la estructura del poema?", options: { a: "Personajes, argumento, espacio y tiempo.", b: "Verso, estrofa, rima, ritmo y métrica.", c: "Actos, escenas, conflicto y desenlace.", d: "Introducción, desarrollo, conclusión y anexos." }, ans: "b" },
+      { q: "¿Cuál es la finalidad del género didáctico?", options: { a: "Narrar historias fantásticas para entretener exclusivamente.", b: "Representar situaciones conflictivas ante un público.", c: "Enseñar o transmitir conocimientos, ideas y valores.", d: "Expresar sentimientos mediante imágenes poéticas." }, ans: "c" },
+      { q: "¿Qué diferencia principalmente a la oratoria de la conversación?", options: { a: "La oratoria busca comunicar ante un público de manera efectiva y persuasiva.", b: "La oratoria siempre es espontánea y carece de preparación.", c: "La conversación exige una estructura formal de introducción, desarrollo y conclusión.", d: "La conversación solamente puede realizarse mediante mensajes escritos." }, ans: "a" },
+      { q: "¿A quién se dirige principalmente una carta informal?", options: { a: "A autoridades exclusivamente para realizar solicitudes oficiales.", b: "A instituciones que exigen un lenguaje administrativo.", c: "A amigos, familiares o conocidos, mediante un tono personal y cercano.", d: "A profesionales que necesitan comunicar asuntos institucionales." }, ans: "c" }
+    ],
+    "3ro": [
+      { q: "¿Qué es el verbo?", options: { a: "Una palabra invariable que expresa cualidades del sujeto.", b: "Una palabra variable que expresa acciones, estados o procesos.", c: "Una palabra que únicamente nombra personas, animales y objetos.", d: "Una palabra que reemplaza al sustantivo en la oración." }, ans: "b" },
+      { q: "¿Cuáles son las partes que forman un verbo?", options: { a: "Prefijo y sufijo.", b: "Sustantivo y adjetivo.", c: "Raíz o lexema y desinencia.", d: "Sujeto y predicado." }, ans: "c" },
+      { q: "¿Cuál de las siguientes oraciones presenta un verbo recíproco?", options: { a: "Yo me lavo las manos.", b: "Ella se viste rápidamente.", c: "El café se enfría.", d: "Los compañeros se ayudan mutuamente." }, ans: "d" },
+      { q: "¿Cuál de las siguientes palabras es un adverbio de lugar?", options: { a: "Mañana.", b: "Despacio.", c: "Bastante.", d: "Aquí." }, ans: "d" },
+      { q: "¿Cuál de las siguientes palabras es un adverbio de tiempo?", options: { a: "Ayer.", b: "Cerca.", c: "Bien.", d: "Quizás." }, ans: "a" },
+      { q: "¿Qué es la literatura?", options: { a: "Una forma de comunicación que transmite únicamente información científica.", b: "Una expresión artística que utiliza las palabras para comunicar ideas, emociones y reflexiones.", c: "Una técnica que permite organizar palabras para elaborar documentos administrativos.", d: "Una forma de escritura que sirve exclusivamente para narrar acontecimientos históricos." }, ans: "b" },
+      { q: "¿Qué obra épica se atribuye a Homero?", options: { a: "La Celestina.", b: "La Odisea.", c: "El Príncipe.", d: "Tartufo." }, ans: "b" },
+      { q: "¿Cuál es la intención comunicativa principal del género lírico?", options: { a: "Informar objetivamente sobre acontecimientos recientes.", b: "Expresar sentimientos, emociones y pensamientos del autor.", c: "Representar únicamente acciones mediante diálogos teatrales.", d: "Explicar procedimientos científicos mediante datos comprobables." }, ans: "b" },
+      { q: "¿Qué es una estrofa?", options: { a: "La repetición de sonidos al final de dos palabras.", b: "La cantidad de sílabas de una palabra.", c: "Un conjunto de versos que se organizan alrededor de una idea.", d: "La actitud emocional que expresa el autor en un poema." }, ans: "c" },
+      { q: "¿Cuál es la finalidad principal de un himno?", options: { a: "Expresar dolor por la muerte de una persona.", b: "Criticar mediante la burla las costumbres sociales.", c: "Relatar las aventuras de un héroe mitológico.", d: "Exaltar a un país, una ciudad, un héroe o una comunidad." }, ans: "d" },
+      { q: "¿Qué sentimientos expresa principalmente una elegía?", options: { a: "Alegría y entusiasmo por una victoria.", b: "Admiración y alabanza hacia un objeto.", c: "Dolor, tristeza y desconsuelo ante una muerte, despedida o pérdida.", d: "Humor y burla frente a una situación cotidiana." }, ans: "c" },
+      { q: "¿Cuál es la finalidad principal de la sátira?", options: { a: "Expresar sentimientos amorosos mediante versos musicales.", b: "Exaltar las virtudes de una nación.", c: "Lamentar la muerte de un ser querido.", d: "Criticar a alguien o algo utilizando recursos como la ironía y la burla." }, ans: "d" },
+      { q: "¿Qué es el lenguaje literario?", options: { a: "El lenguaje empleado exclusivamente en documentos legales.", b: "El lenguaje utilizado únicamente para transmitir datos objetivos.", c: "El lenguaje que evita el uso de recursos expresivos.", d: "El lenguaje artístico que emplea las palabras de manera expresiva para producir efectos estéticos." }, ans: "d" },
+      { q: "¿Cuál es la función principal de las figuras literarias?", options: { a: "Embellecer las expresiones y aumentar la fuerza expresiva de los textos.", b: "Eliminar los sentimientos y las emociones de las composiciones.", c: "Sustituir todas las palabras por definiciones científicas.", d: "Evitar que el lector interprete el significado de una obra." }, ans: "a" },
+      { q: "¿En cuál de las siguientes expresiones se presenta una personificación?", options: { a: "Tus ojos son dos luceros.", b: "El cielo azul.", c: "La blanca nieve cubrió el campo.", d: "El cielo comenzó a llorar toda la noche." }, ans: "d" }
+    ],
+    "4to": [
+      { q: "¿Qué es un texto?", options: { a: "Un conjunto de palabras que siempre expresa sentimientos.", b: "Un conjunto de palabras organizadas coherentemente para comunicar un mensaje.", c: "Una serie de oraciones que necesariamente narran acontecimientos imaginarios.", d: "Un conjunto de párrafos que únicamente transmite información científica." }, ans: "b" },
+      { q: "¿Qué propiedad textual permite que las ideas sigan un orden lógico?", options: { a: "La cohesión.", b: "La adecuación.", c: "La coherencia.", d: "La argumentación." }, ans: "c" },
+      { q: "¿Cuál de los siguientes textos tiene como finalidad principal enseñar o hacer comprender un tema?", options: { a: "El texto expositivo.", b: "El texto descriptivo.", c: "El texto conversacional.", d: "El texto instructivo." }, ans: "a" },
+      { q: "¿Qué tipo de texto predomina en una receta de cocina?", options: { a: "Argumentativo.", b: "Narrativo.", c: "Expositivo.", d: "Instructivo." }, ans: "d" },
+      { q: "¿Cuál es la característica principal del texto literario?", options: { a: "Registrar acuerdos establecidos durante una reunión.", b: "Provocar emociones mediante recursos estéticos y creativos.", c: "Presentar exclusivamente datos científicos verificables.", d: "Comunicar instrucciones mediante pasos ordenados." }, ans: "b" },
+      { q: "¿Qué es el ensayo?", options: { a: "Un documento oficial que registra decisiones institucionales.", b: "Un relato que presenta personajes y acontecimientos ficticios.", c: "Una composición en prosa que analiza y reflexiona sobre un tema.", d: "Una exposición oral en la que participan varios especialistas." }, ans: "c" },
+      { q: "¿Qué es la argumentación?", options: { a: "El proceso de describir un tema mediante características físicas.", b: "El proceso de presentar razones y pruebas para defender una postura.", c: "La actividad de relatar hechos siguiendo un orden cronológico.", d: "La acción de registrar acuerdos y decisiones de una reunión." }, ans: "b" },
+      { q: "¿Cuál es el propósito principal de la contraargumentación?", options: { a: "Presentar una historia sin expresar opiniones.", b: "Repetir la tesis sin aportar nuevas razones.", c: "Describir un problema sin analizarlo.", d: "Cuestionar o refutar una postura mediante razones y evidencias." }, ans: "d" },
+      { q: "¿Cuál es la finalidad principal de una hoja de vida?", options: { a: "Registrar los acuerdos de una asamblea.", b: "Presentar la formación, experiencia y habilidades de una persona que busca empleo.", c: "Exponer los resultados de una investigación científica.", d: "Solicitar formalmente un permiso a una autoridad." }, ans: "b" },
+      { q: "¿Cuál es la función principal de un acta?", options: { a: "Registrar los temas tratados, las decisiones y los acuerdos de una reunión.", b: "Presentar las experiencias laborales de una persona.", c: "Defender una opinión mediante argumentos.", d: "Describir detalladamente un lugar turístico." }, ans: "a" },
+      { q: "¿Cuál de los siguientes temas es característico del Romanticismo?", options: { a: "El amor, la pasión, la naturaleza y la nostalgia por el pasado.", b: "La descripción objetiva de las actividades laborales cotidianas.", c: "El análisis científico de la herencia y el comportamiento humano.", d: "La búsqueda de la perfección formal mediante reglas estrictas." }, ans: "a" },
+      { q: "¿Cuál es el objetivo principal del Realismo?", options: { a: "Idealizar la naturaleza y los sentimientos del individuo.", b: "Representar la realidad cotidiana de manera objetiva y detallada.", c: "Exaltar las culturas antiguas mediante reglas clásicas.", d: "Crear relatos breves protagonizados por animales que enseñan moralejas." }, ans: "b" },
+      { q: "¿Qué es el género dramático?", options: { a: "Un conjunto de textos que explican conocimientos científicos.", b: "Un conjunto de obras destinadas a la representación mediante acciones y diálogos.", c: "Una composición poética que expresa sentimientos personales.", d: "Una narración que presenta los acontecimientos mediante un narrador." }, ans: "b" },
+      { q: "¿Cuál es el propósito principal de la tragedia?", options: { a: "Provocar la risa mediante situaciones cotidianas.", b: "Representar escenas breves de carácter popular.", c: "Presentar conflictos graves y provocar una experiencia emocional intensa en el público.", d: "Combinar obligatoriamente canciones y diálogos hablados." }, ans: "c" },
+      { q: "¿Qué es la tragicomedia?", options: { a: "Una obra exclusivamente humorística con personajes populares.", b: "Una composición lírica centrada en la belleza del lenguaje.", c: "Un género que combina elementos trágicos y cómicos.", d: "Una obra científica que analiza los conflictos sociales." }, ans: "c" }
+    ],
+    "5to": [
+      { q: "¿Qué fue el Boom Latinoamericano?", options: { a: "Un movimiento político que surgió en América Latina durante el siglo XIX.", b: "Un fenómeno literario, social y cultural de los años 60 y 70 del siglo XX.", c: "Una corriente artística europea que rechazó la literatura latinoamericana.", d: "Un movimiento educativo que promovió la enseñanza de idiomas extranjeros." }, ans: "b" },
+      { q: "¿Cuál fue uno de los principales resultados del Boom Latinoamericano?", options: { a: "La desaparición de las novelas latinoamericanas.", b: "La reducción de las publicaciones literarias en español.", c: "El abandono de los temas sociales en la literatura.", d: "El reconocimiento internacional de escritores latinoamericanos." }, ans: "d" },
+      { q: "¿Quién escribió la novela Cien años de soledad?", options: { a: "Gabriel García Márquez.", b: "Mario Vargas Llosa.", c: "Carlos Fuentes.", d: "Julio Cortázar." }, ans: "a" },
+      { q: "¿Qué fueron las vanguardias literarias?", options: { a: "Corrientes que defendían exclusivamente las reglas clásicas de escritura.", b: "Movimientos que buscaban recuperar únicamente los temas medievales.", c: "Movimientos artísticos que renovaron las formas tradicionales de expresión.", d: "Escuelas literarias que rechazaban toda innovación artística." }, ans: "c" },
+      { q: "¿Qué es un caligrama?", options: { a: "Un relato breve que transmite una enseñanza moral.", b: "Un texto argumentativo que presenta una opinión personal.", c: "Una composición narrativa organizada en capítulos.", d: "Un poema cuyas palabras forman una figura visual." }, ans: "d" },
+      { q: "¿Qué movimiento literario exploró los sueños, el subconsciente y lo irracional?", options: { a: "Creacionismo.", b: "Expresionismo.", c: "Surrealismo.", d: "Futurismo." }, ans: "c" },
+      { q: "¿Qué movimiento vanguardista enfatizó la expresión de sentimientos como el miedo, el odio, la soledad y la angustia?", options: { a: "Cubismo.", b: "Futurismo.", c: "Creacionismo.", d: "Expresionismo." }, ans: "d" },
+      { q: "¿Qué es un informe?", options: { a: "Un texto poético que expresa sentimientos y emociones.", b: "Una narración breve que presenta una enseñanza moral.", c: "Un texto literario que combina fantasía y realidad.", d: "Un texto expositivo que comunica información sobre un asunto específico." }, ans: "d" },
+      { q: "¿Qué es una parábola?", options: { a: "Una narración breve que transmite una enseñanza moral o espiritual.", b: "Un texto científico que presenta resultados de laboratorio.", c: "Una composición poética cuyas palabras forman una imagen.", d: "Un artículo periodístico que informa sobre acontecimientos recientes." }, ans: "a" },
+      { q: "¿Qué es un ensayo?", options: { a: "Un texto en prosa que analiza un tema y presenta argumentos y reflexiones del autor.", b: "Una narración breve que utiliza animales como protagonistas.", c: "Un texto que comunica exclusivamente resultados de investigaciones experimentales.", d: "Una composición poética que elimina toda expresión de ideas personales." }, ans: "a" },
+      { q: "¿Cuál es la estructura básica de un ensayo?", options: { a: "Planteamiento, nudo y desenlace.", b: "Título, personajes y diálogos.", c: "Introducción, desarrollo y cierre.", d: "Introducción, metodología y anexos exclusivamente." }, ans: "c" },
+      { q: "¿Qué es el texto dramático?", options: { a: "Es el conjunto de decorados y objetos empleados en el escenario.", b: "Es el conjunto de movimientos corporales realizados por los actores.", c: "Es el espacio donde se desarrolla la representación teatral.", d: "Es el guion que contiene diálogos e instrucciones para la actuación." }, ans: "d" },
+      { q: "¿Qué es un monólogo?", options: { a: "Una conversación breve entre dos personajes de una obra.", b: "Un discurso extenso pronunciado por un personaje sin esperar respuesta.", c: "Una instrucción del dramaturgo sobre la expresión corporal.", d: "Una conversación dirigida exclusivamente a los espectadores." }, ans: "b" },
+      { q: "¿Qué obra de Augusto Céspedes presenta las experiencias y el sufrimiento de los soldados durante la Guerra del Chaco?", options: { a: "Los deshabitados.", b: "El Pozo.", c: "Manchay Puitu.", d: "Felipe Delgado." }, ans: "b" },
+      { q: "¿Qué importancia tiene la película Ukamau (1966) en la historia del cine boliviano?", options: { a: "Fue la primera película boliviana filmada a color.", b: "Fue el primer documental boliviano sobre la Guerra del Chaco.", c: "Fue el primer largometraje en aymara, dirigido por Jorge Sanjinés.", d: "Fue la primera película boliviana dedicada exclusivamente al teatro." }, ans: "c" }
+    ],
+    "6to": [
+      { q: "¿Qué son las variaciones de la lengua?", options: { a: "Son los errores que se cometen al hablar un idioma.", b: "Son las diferentes formas de utilizar una misma lengua.", c: "Son las reglas que impiden modificar el vocabulario.", d: "Son las palabras que desaparecen de un idioma." }, ans: "b" },
+      { q: "¿Qué característica corresponde a las variaciones regionales?", options: { a: "Cambian únicamente según la edad de los hablantes.", b: "Se presentan exclusivamente en situaciones profesionales.", c: "Dependen solamente del nivel educativo de las personas.", d: "Varían según la zona geográfica de los hablantes." }, ans: "d" },
+      { q: "¿Qué se entiende por identidad lingüística?", options: { a: "El vínculo de una persona o grupo con una lengua que forma parte de su identidad cultural y social.", b: "La capacidad de utilizar exclusivamente el lenguaje escrito en situaciones formales.", c: "La obligación de hablar una lengua considerada superior a las demás.", d: "La utilización de palabras idénticas por todos los habitantes de un país." }, ans: "a" },
+      { q: "¿Cuál es una consecuencia de la discriminación lingüística?", options: { a: "El fortalecimiento obligatorio de todas las lenguas indígenas.", b: "La desaparición inmediata de las diferencias regionales.", c: "El trato desfavorable hacia las personas por el idioma que hablan.", d: "La utilización de un vocabulario común en todos los contextos." }, ans: "c" },
+      { q: "¿Qué es la investigación?", options: { a: "Es una actividad que consiste en recopilar opiniones personales sin analizarlas.", b: "Es un proceso sistemático, crítico y empírico para estudiar fenómenos y producir conocimientos.", c: "Es una técnica que permite memorizar información sin comprobarla.", d: "Es un procedimiento destinado únicamente a resolver problemas matemáticos." }, ans: "b" },
+      { q: "¿Qué es una variable en una investigación?", options: { a: "Una conclusión definitiva que no puede modificarse.", b: "Una opinión que expresa el investigador sobre el tema.", c: "Una característica o propiedad que puede observarse, medirse o analizarse.", d: "Una referencia bibliográfica utilizada al finalizar el trabajo." }, ans: "c" },
+      { q: "¿Qué caracteriza a la investigación experimental?", options: { a: "Recopila testimonios sin modificar ninguna condición.", b: "Describe una población sin analizar sus variables.", c: "Estudia documentos existentes sin realizar pruebas.", d: "Manipula variables en condiciones controladas para observar sus efectos." }, ans: "d" },
+      { q: "¿Qué elemento permite formular una posible respuesta al problema de investigación?", options: { a: "La hipótesis.", b: "La bibliografía.", c: "El anexo.", d: "La conclusión final." }, ans: "a" },
+      { q: "¿Qué son los métodos de investigación?", options: { a: "Son documentos que contienen los resultados de un estudio.", b: "Son opiniones que orientan la interpretación de los datos.", c: "Son materiales gráficos que se emplean para exponer conclusiones.", d: "Son pasos y procedimientos sistemáticos que guían el desarrollo de una investigación." }, ans: "d" },
+      { q: "¿Qué es una encuesta?", options: { a: "Un registro personal de observaciones realizadas en el campo.", b: "Una conversación libre que no necesita preguntas.", c: "Un documento que presenta las referencias bibliográficas.", d: "Una técnica que recopila información mediante preguntas dirigidas a una población o muestra." }, ans: "d" },
+      { q: "¿Para qué se utilizan los test o pruebas psicométricas?", options: { a: "Para medir características psicológicas, como la inteligencia o la atención.", b: "Para registrar las costumbres de una comunidad durante un año.", c: "Para describir las etapas de un experimento químico.", d: "Para organizar las referencias de un texto científico." }, ans: "a" },
+      { q: "¿Qué es un texto científico?", options: { a: "Un escrito literario que narra acontecimientos ficticios.", b: "Un texto que expresa emociones y opiniones sin necesidad de evidencias.", c: "Un escrito que comunica conocimientos, teorías o resultados de investigaciones científicas.", d: "Un documento que presenta únicamente instrucciones cotidianas." }, ans: "c" },
+      { q: "¿Cuál es el objetivo principal de las normas APA?", options: { a: "Organizar la presentación de trabajos académicos y establecer pautas para citar y referenciar fuentes.", b: "Sustituir las fuentes bibliográficas por opiniones personales.", c: "Establecer reglas exclusivas para la escritura de obras literarias.", d: "Eliminar las citas textuales de los trabajos de investigación." }, ans: "a" },
+      { q: "¿Qué es una cita textual?", options: { a: "Una explicación personal de las ideas de un autor.", b: "Una lista de fuentes consultadas al final del trabajo.", c: "Un resumen elaborado sin mencionar al autor original.", d: "La reproducción exacta de palabras tomadas de una fuente, con el crédito correspondiente." }, ans: "d" },
+      { q: "¿Cuál es la función de las referencias bibliográficas?", options: { a: "Sustituir el desarrollo de la investigación.", b: "Permitir que el lector identifique y consulte las fuentes utilizadas.", c: "Presentar únicamente las opiniones de los participantes.", d: "Mostrar los resultados estadísticos sin explicar su procedencia." }, ans: "b" }
+    ]
+  };
+
+  // Variables de estado
+  let selectedCourse = "";
+  let selectedParallel = "";
+  let currentAnswers = {};
+  let lastEvaluationRecord = null;
+
+  window.addEventListener("DOMContentLoaded", () => {
+    try {
+      const savedUrl = localStorage.getItem("google_sheets_exec_url") || DEFAULT_GOOGLE_SCRIPT_URL;
+      document.getElementById("scriptUrlInput").value = savedUrl;
+
+      // Verificar si este dispositivo ya rindió el examen (Bloqueo de 1 solo intento)
+      const lockedExam = localStorage.getItem("examen_bloqueado_2026");
+      if (lockedExam) {
+        lastEvaluationRecord = JSON.parse(lockedExam);
+        renderResultsScreen(lastEvaluationRecord);
+        const notify = document.getElementById("syncNotification");
+        notify.style.display = "block";
+        notify.style.background = "#1a2b22";
+        notify.style.border = "1px solid #44594d";
+        notify.style.color = "#cfe3d7";
+        notify.textContent = "Evaluación ya registrada desde este dispositivo (" + lastEvaluationRecord.nombre + " - " + lastEvaluationRecord.puntaje + "/45 pts). Para habilitar otro intento, pulsa 'Reiniciar (Con Clave)'.";
+      }
+    } catch (e) {}
+  });
+
+  function isValidKey(inputVal) {
+    if (!inputVal) return false;
+    const clean = inputVal.trim().toLowerCase();
+    return VALID_RESET_KEYS.includes(clean);
+  }
+
+  function showBanner(elementId, message, type) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    el.className = "alert-banner " + type;
+    el.textContent = message;
+  }
+
+  function hideBanner(elementId) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    el.className = "alert-banner";
+    el.textContent = "";
+  }
+
+  // Acceso con Clave al Panel Docente superior
+  function toggleAdminAuth() {
+    const panel = document.getElementById("adminPanel");
+    const authBox = document.getElementById("adminAuthBox");
+    if (!panel.classList.contains("hidden")) {
+      panel.classList.add("hidden");
+      return;
+    }
+    authBox.classList.toggle("hidden");
+    hideBanner("adminAuthNotice");
+    document.getElementById("adminPassInput").value = "";
+  }
+
+  function verifyAdminPass() {
+    const val = document.getElementById("adminPassInput").value;
+    if (isValidKey(val)) {
+      document.getElementById("adminAuthBox").classList.add("hidden");
+      document.getElementById("adminPanel").classList.remove("hidden");
+    } else {
+      showBanner("adminAuthNotice", "Clave docente incorrecta.", "error");
+    }
+  }
+
+  // Reinicio con Clave desde la Pantalla Final
+  function toggleResetPasswordBox() {
+    const box = document.getElementById("resetPasswordBox");
+    box.classList.toggle("hidden");
+    hideBanner("resetErrorBanner");
+    const input = document.getElementById("resetPassInput");
+    input.value = "";
+    if (!box.classList.contains("hidden")) {
+      input.focus();
+    }
+  }
+
+  function confirmResetWithPassword() {
+    const val = document.getElementById("resetPassInput").value;
+    if (!isValidKey(val)) {
+      showBanner("resetErrorBanner", "Clave de reinicio incorrecta. Solicita autorización al docente.", "error");
+      return;
+    }
+    executeResetExam();
+  }
+
+  function forceUnlockFromAdmin() {
+    executeResetExam();
+    showBanner("adminNotice", "Dispositivo desbloqueado y listo para un nuevo estudiante.", "success");
+  }
+
+  function executeResetExam() {
+    try {
+      localStorage.removeItem("examen_bloqueado_2026");
+    } catch (e) {}
+    lastEvaluationRecord = null;
+    currentAnswers = {};
+    document.getElementById("studentName").value = "";
+    document.getElementById("courseInput").value = "";
+    document.getElementById("resetPassInput").value = "";
+    document.getElementById("resetPasswordBox").classList.add("hidden");
+    selectCourse("", false);
+    selectParallel("");
+    hideBanner("loginErrorBox");
+    hideBanner("resetErrorBanner");
+    document.getElementById("resultScreen").classList.add("hidden");
+    document.getElementById("examScreen").classList.add("hidden");
+    document.getElementById("loginScreen").classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function saveScriptUrl() {
+    const url = document.getElementById("scriptUrlInput").value.trim();
+    try {
+      localStorage.setItem("google_sheets_exec_url", url);
+    } catch (e) {}
+    showBanner("adminNotice", "URL de Google Sheets guardada correctamente en este navegador.", "success");
+  }
+
+  function copyAppsScriptCode() {
+    const code = document.getElementById("appsScriptCode").innerText;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(code).then(() => {
+        showBanner("adminNotice", "Código copiado al portapapeles. Pégalo en Extensiones > Apps Script.", "success");
+      });
+    } else {
+      showBanner("adminNotice", "Selecciona el código de abajo y cópialo con Ctrl + C.", "error");
+    }
+  }
+
+  // Interpretar texto escrito del curso (ej. "primero", "1", "1ro", "sexto", "1ro B")
+  function parseCourseFromText(val) {
+    if (!val) return "";
+    const clean = val.toLowerCase().trim();
+    if (clean.includes("1") || clean.includes("primer")) return "1ro";
+    if (clean.includes("2") || clean.includes("segund")) return "2do";
+    if (clean.includes("3") || clean.includes("tercer")) return "3ro";
+    if (clean.includes("4") || clean.includes("cuart")) return "4to";
+    if (clean.includes("5") || clean.includes("quint")) return "5to";
+    if (clean.includes("6") || clean.includes("sext")) return "6to";
+    return "";
+  }
+
+  function handleCourseText(val) {
+    const detected = parseCourseFromText(val);
+    if (detected) {
+      selectCourse(detected, false);
+    }
+    const matchPar = val.toUpperCase().trim().match(/\b([A-F])$/);
+    if (matchPar) {
+      selectParallel(matchPar[1]);
+    }
+  }
+
+  function selectCourse(courseKey, updateInput = true) {
+    selectedCourse = courseKey;
+    hideBanner("loginErrorBox");
+    document.getElementById("courseInput").classList.remove("input-error");
+    if (updateInput && courseKey) {
+      document.getElementById("courseInput").value = courseKey + " de Secundaria";
+    }
+    ["1ro", "2do", "3ro", "4to", "5to", "6to"].forEach(c => {
+      const btn = document.getElementById("btnCourse-" + c);
+      if (btn) btn.classList.toggle("active-course", c === courseKey);
+    });
+  }
+
+  function selectParallel(par) {
+    selectedParallel = par;
+    hideBanner("loginErrorBox");
+    document.getElementById("parallelSelect").classList.remove("input-error");
+    document.getElementById("parallelSelect").value = par;
+    ["A", "B", "C", "D", "E", "F"].forEach(p => {
+      const btn = document.getElementById("btnPar-" + p);
+      if (btn) btn.classList.toggle("active-parallel", p === par);
+    });
+  }
+
+  function startExam() {
+    // Verificar si ya está bloqueado
+    try {
+      const lockedExam = localStorage.getItem("examen_bloqueado_2026");
+      if (lockedExam) {
+        lastEvaluationRecord = JSON.parse(lockedExam);
+        renderResultsScreen(lastEvaluationRecord);
+        return;
+      }
+    } catch (e) {}
+
+    hideBanner("loginErrorBox");
+    const nameInput = document.getElementById("studentName");
+    const courseInputEl = document.getElementById("courseInput");
+    const parallelSelectEl = document.getElementById("parallelSelect");
+
+    nameInput.classList.remove("input-error");
+    courseInputEl.classList.remove("input-error");
+    parallelSelectEl.classList.remove("input-error");
+
+    const name = nameInput.value.trim();
+
+    if (!selectedCourse && courseInputEl.value.trim()) {
+      const detected = parseCourseFromText(courseInputEl.value);
+      if (detected) selectCourse(detected, false);
+    }
+
+    if (!selectedParallel && parallelSelectEl.value) {
+      selectParallel(parallelSelectEl.value);
+    }
+
+    if (!name || name.length < 3) {
+      nameInput.classList.add("input-error");
+      showBanner("loginErrorBox", "Por favor, escribe tus Nombres y Apellidos completos para comenzar.", "error");
+      nameInput.focus();
+      return;
+    }
+
+    if (!selectedCourse || !EXAM_DATABASE[selectedCourse]) {
+      courseInputEl.classList.add("input-error");
+      showBanner("loginErrorBox", "Por favor, selecciona tu Curso (1ro a 6to) haciendo clic en uno de los botones de curso o escribiendo 'primero', '2do', etc.", "error");
+      courseInputEl.focus();
+      return;
+    }
+
+    if (!selectedParallel) {
+      parallelSelectEl.classList.add("input-error");
+      showBanner("loginErrorBox", "Por favor, selecciona tu Paralelo (A, B, C, D, E o F) antes de iniciar.", "error");
+      parallelSelectEl.focus();
+      return;
+    }
+
+    currentAnswers = {};
+    hideBanner("examWarningBox");
+    const submitBtn = document.getElementById("btnSubmitExam");
+    submitBtn.textContent = "Finalizar Evaluación, Generar PDF y Enviar Puntaje";
+    submitBtn.onclick = function() { submitExam(false); };
+
+    document.getElementById("headerStudentName").textContent = "" + name;
+    document.getElementById("headerCourseBadge").textContent = "Curso: " + selectedCourse + ' "' + selectedParallel + '"';
+
+    renderQuestions();
+    document.getElementById("loginScreen").classList.add("hidden");
+    document.getElementById("resultScreen").classList.add("hidden");
+    document.getElementById("examScreen").classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function renderQuestions() {
+    const container = document.getElementById("questionsContainer");
+    container.innerHTML = "";
+    const questions = EXAM_DATABASE[selectedCourse];
+
+    questions.forEach((item, index) => {
+      const card = document.createElement("div");
+      card.className = "question-card";
+      card.id = "qcard-" + index;
+
+      let optionsHTML = "";
+      for (const [letter, text] of Object.entries(item.options)) {
+        optionsHTML += `
+          <button type="button" class="option-btn" id="opt-${index}-${letter}" onclick="chooseOption(${index}, '${letter}')">
+            <span class="opt-letter">${letter.toUpperCase()}</span>
+            <span>${text}</span>
+          </button>
+        `;
+      }
+
+      card.innerHTML = `
+        <div class="q-rail"><span>${index + 1}</span></div>
+        <div class="q-body">
+          <div class="q-title">${item.q}</div>
+          <div class="options-grid">${optionsHTML}</div>
+        </div>`;
+      container.appendChild(card);
+    });
+
+    const nav = document.getElementById("qNav");
+    nav.innerHTML = "";
+    questions.forEach((_, i) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.id = "qnav-" + i; b.textContent = i + 1;
+      b.setAttribute("aria-label", "Ir a la pregunta " + (i + 1));
+      b.onclick = () => document.getElementById("qcard-" + i).scrollIntoView({ behavior: "smooth", block: "start" });
+      nav.appendChild(b);
+    });
+    observeQuestions();
+    updateProgress();
+  }
+
+  function chooseOption(qIndex, letter) {
+    currentAnswers[qIndex] = letter;
+    hideBanner("examWarningBox");
+    const submitBtn = document.getElementById("btnSubmitExam");
+    submitBtn.textContent = "Finalizar Evaluación, Generar PDF y Enviar Puntaje";
+    submitBtn.onclick = function() { submitExam(false); };
+
+    const questions = EXAM_DATABASE[selectedCourse];
+    for (const optKey of Object.keys(questions[qIndex].options)) {
+      const btn = document.getElementById("opt-" + qIndex + "-" + optKey);
+      if (btn) btn.classList.toggle("selected", optKey === letter);
+    }
+    document.getElementById("qcard-" + qIndex).classList.add("answered");
+    const nb = document.getElementById("qnav-" + qIndex); if (nb) nb.classList.add("done");
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const answeredCount = Object.keys(currentAnswers).length;
+    document.getElementById("progressCounter").textContent = answeredCount + " / 15";
+    document.getElementById("progressBarFill").style.width = ((answeredCount / 15) * 100) + "%";
+  }
+
+  function submitExam(forceSubmit) {
+    const questions = EXAM_DATABASE[selectedCourse];
+    const answeredCount = Object.keys(currentAnswers).length;
+
+    if (answeredCount < questions.length && !forceSubmit) {
+      const missing = questions.length - answeredCount;
+      showBanner(
+        "examWarningBox",
+        "Te faltan responder " + missing + " pregunta(s). Si deseas entregar así de todos modos, vuelve a pulsar el botón de abajo.",
+        "error"
+      );
+      const submitBtn = document.getElementById("btnSubmitExam");
+      submitBtn.textContent = "Confirmar Entrega con " + missing + " pregunta(s) sin responder";
+      submitBtn.onclick = function() { submitExam(true); };
+      return;
+    }
+
+    const studentName = document.getElementById("studentName").value.trim();
+    const now = new Date();
+    const fechaHora = now.toLocaleDateString("es-BO") + " " + now.toLocaleTimeString("es-BO");
+
+    let correctCount = 0;
+    let failedList = [];
+    let detailSummary = [];
+    let breakdownItems = [];
+
+    questions.forEach((item, idx) => {
+      const chosen = currentAnswers[idx] || null;
+      const isCorrect = chosen === item.ans;
+      if (isCorrect) {
+        correctCount++;
+      } else {
+        failedList.push("P" + (idx + 1));
+      }
+
+      detailSummary.push("P" + (idx + 1) + ":" + (chosen ? chosen.toUpperCase() : "-") + "(" + (isCorrect ? "OK" : "X") + ")");
+
+      breakdownItems.push({
+        num: idx + 1,
+        question: item.q,
+        chosenLetter: chosen ? chosen.toUpperCase() : "SIN RESPONDER",
+        chosenText: chosen ? item.options[chosen] : "No respondió esta pregunta",
+        correctLetter: item.ans.toUpperCase(),
+        correctText: item.options[item.ans],
+        isCorrect: isCorrect,
+        points: isCorrect ? 3 : 0
+      });
+    });
+
+    const totalScore = correctCount * 3; // 3 puntos por correcta sobre 45
+    const wrongCount = questions.length - correctCount;
+
+    lastEvaluationRecord = {
+      fechaHora: fechaHora,
+      nombre: studentName,
+      curso: selectedCourse,
+      paralelo: selectedParallel,
+      cursoCompleto: selectedCourse + ' "' + selectedParallel + '"',
+      puntaje: totalScore,
+      aciertosTexto: correctCount + " de 15",
+      preguntasFalladas: failedList.length > 0 ? failedList.join(", ") : "Ninguna (15/15)",
+      detalleRespuestas: detailSummary.join(" | "),
+      breakdown: breakdownItems,
+      correctCount: correctCount,
+      wrongCount: wrongCount
+    };
+
+    // Guardar en respaldo local y activar bloqueo de 1 solo intento
+    try {
+      const history = JSON.parse(localStorage.getItem("local_evaluations_backup") || "[]");
+      history.push(lastEvaluationRecord);
+      localStorage.setItem("local_evaluations_backup", JSON.stringify(history));
+      localStorage.setItem("examen_bloqueado_2026", JSON.stringify(lastEvaluationRecord));
+    } catch (e) {}
+
+    // Mostrar resultados en pantalla
+    renderResultsScreen(lastEvaluationRecord);
+
+    // Enviar automáticamente a Google Sheets
+    sendToGoogleSheets(lastEvaluationRecord);
+  }
+
+  function renderResultsScreen(record) {
+    document.getElementById("loginScreen").classList.add("hidden");
+    document.getElementById("examScreen").classList.add("hidden");
+    document.getElementById("resultScreen").classList.remove("hidden");
+
+    animateScore(record.puntaje);
+
+    document.getElementById("resultStudentTitle").textContent = record.nombre;
+    document.getElementById("resultMetaInfo").textContent =
+      "Curso: " + record.cursoCompleto + ". Área: Lengua Castellana y Originaria. Nota: " + record.puntaje + " de 45 puntos.";
+
+    document.getElementById("statCorrect").textContent = record.correctCount + " (" + record.puntaje + " pts)";
+    document.getElementById("statWrong").textContent = String(record.wrongCount);
+    document.getElementById("statTimestamp").textContent = record.fechaHora;
+
+    const revContainer = document.getElementById("reviewContainer");
+    revContainer.innerHTML = "";
+
+    record.breakdown.forEach(b => {
+      const div = document.createElement("div");
+      div.className = "review-item " + (b.isCorrect ? "" : "wrong");
+      div.innerHTML = `
+        <span class="status-chip ${b.isCorrect ? 'ok' : 'fail'}">
+          ${b.isCorrect ? 'Correcta, +3 puntos' : 'Incorrecta, 0 puntos'}
+        </span>
+        <div class="rv-q">
+          ${b.num}. ${b.question}
+        </div>
+        <div class="rv-a">
+          <strong>Tu respuesta:</strong> (${b.chosenLetter}) ${b.chosenText}
+        </div>
+        ${!b.isCorrect ? `
+          <div class="rv-c">
+            <strong>Respuesta correcta:</strong> (${b.correctLetter}) ${b.correctText}
+          </div>
+        ` : ""}
+      `;
+      revContainer.appendChild(div);
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // Envío en tiempo real a Google Sheets
+  async function sendToGoogleSheets(record) {
+    const notify = document.getElementById("syncNotification");
+    let savedUrl = "";
+    try {
+      savedUrl = localStorage.getItem("google_sheets_exec_url") || "";
+    } catch (e) {}
+    const scriptUrl = (savedUrl || DEFAULT_GOOGLE_SCRIPT_URL).trim();
+
+    notify.style.display = "block";
+    if (!scriptUrl) {
+      notify.style.background = "#3a3012";
+      notify.style.border = "1px solid #7a6a2a";
+      notify.style.color = "#f0dc8a";
+      notify.textContent = "Nota calculada y guardada localmente.";
+      return;
+    }
+
+    notify.style.background = "#1a2b22";
+    notify.style.border = "1px solid #44594d";
+    notify.style.color = "#cfe3d7";
+    notify.textContent = "Enviando calificación en tiempo real a Google Sheets...";
+
+    try {
+      await fetch(scriptUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(record)
+      });
+
+      notify.style.background = "#14301f";
+      notify.style.border = "1px solid #2f6a47";
+      notify.style.color = "#cfe3d7";
+      notify.textContent = "Calificación enviada a Google Sheets (" + record.nombre + " - " + record.cursoCompleto + " - " + record.puntaje + "/45 pts - " + record.fechaHora + ").";
+    } catch (err) {
+      notify.style.background = "#3a1714";
+      notify.style.border = "1px solid #7d3a34";
+      notify.style.color = "#f2b8b2";
+      notify.textContent = "Error de conexión al enviar a Google Sheets. Verifica tu internet y pulsa 'Reenviar Nota'.";
+    }
+  }
+
+  function retrySendToGoogleSheets() {
+    if (lastEvaluationRecord) {
+      sendToGoogleSheets(lastEvaluationRecord);
+    }
+  }
+
+  // Generar PDF con el puntaje, fecha/hora y detalle de aciertos y fallos
+  function generateStudentPDF() {
+    if (!lastEvaluationRecord) return;
+
+    if (!window.jspdf || !window.jspdf.jsPDF) {
+      window.print();
+      return;
+    }
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "letter" });
+
+    // Encabezado Institucional Oscuro/Azul Cobalto
+    doc.setFillColor(11, 61, 36);
+    doc.rect(0, 0, 216, 36, "F");
+    if (CREST_DATA) { try { const ch = 26, cw = Math.min(26, ch * CREST_RATIO); doc.addImage(CREST_DATA, "PNG", 200 - cw, 5, cw, ch); } catch (e) {} }
+
+    doc.setTextColor(255, 255, 255);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(14);
+    doc.text(NOMBRE_COLEGIO.toUpperCase(), 14, 15);
+
+    doc.setFontSize(10);
+    doc.setTextColor(214, 226, 219);
+    doc.text("REPORTE OFICIAL DE EVALUACIÓN 2026. ÁREA: LENGUA CASTELLANA Y ORIGINARIA", 14, 22);
+
+    doc.setTextColor(203, 213, 225);
+    doc.setFont("helvetica", "normal");
+    doc.text("Fecha y Hora de Entrega: " + lastEvaluationRecord.fechaHora, 14, 29);
+
+    // Caja de Datos del Estudiante y Puntaje
+    doc.setFillColor(237, 243, 239);
+    doc.setDrawColor(176, 192, 182);
+    doc.roundedRect(14, 42, 188, 28, 3, 3, "FD");
+
+    doc.setTextColor(15, 23, 42);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.text("ESTUDIANTE: " + lastEvaluationRecord.nombre, 19, 51);
+    doc.text("CURSO Y PARALELO: " + lastEvaluationRecord.cursoCompleto + " de Secundaria", 19, 59);
+    doc.text("PREGUNTAS FALLADAS: " + lastEvaluationRecord.preguntasFalladas, 19, 66);
+
+    // Cuadro Destacado de Nota
+    doc.setFillColor(20, 99, 58);
+    doc.roundedRect(150, 45, 48, 22, 3, 3, "F");
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(9);
+    doc.text("PUNTAJE FINAL", 174, 51, { align: "center" });
+    doc.setFontSize(15);
+    doc.text(lastEvaluationRecord.puntaje + " / 45 PTS", 174, 61, { align: "center" });
+
+    // Tabla de detalle de las 15 preguntas (aciertos y fallos)
+    const tableRows = lastEvaluationRecord.breakdown.map(item => [
+      "P" + item.num,
+      item.question,
+      "(" + item.chosenLetter + ") " + item.chosenText,
+      item.isCorrect ? "CORRECTO (+3)" : "FALLÓ (0 pts)\nCorrecta: (" + item.correctLetter + ") " + item.correctText
+    ]);
+
+    doc.autoTable({
+      startY: 75,
+      head: [["N°", "Pregunta", "Respuesta del Estudiante", "Resultado / Corrección"]],
+      body: tableRows,
+      theme: "grid",
+      styles: { fontSize: 8.2, cellPadding: 2.5, valign: "middle" },
+      headStyles: { fillColor: [15, 77, 46], textColor: 255, fontStyle: "bold" },
+      columnStyles: {
+        0: { cellWidth: 11, halign: "center", fontStyle: "bold" },
+        1: { cellWidth: 62 },
+        2: { cellWidth: 55 },
+        3: { cellWidth: 60 }
+      },
+      didParseCell: function(data) {
+        if (data.section === "body" && data.column.index === 3) {
+          const raw = String(data.cell.raw);
+          if (raw.startsWith("CORRECTO")) {
+            data.cell.styles.textColor = [15, 110, 60];
+            data.cell.styles.fontStyle = "bold";
+          } else {
+            data.cell.styles.textColor = [165, 40, 31];
+            data.cell.styles.fontStyle = "bold";
+          }
+        }
+      }
+    });
+
+    const cleanName = lastEvaluationRecord.nombre.replace(/[^a-zA-Z0-9]/g, "_");
+    doc.save("Evaluacion_" + lastEvaluationRecord.curso + "_" + lastEvaluationRecord.paralelo + "_" + cleanName + ".pdf");
+  }
+
+  function exportLocalBackupCSV() {
+    let history = [];
+    try {
+      history = JSON.parse(localStorage.getItem("local_evaluations_backup") || "[]");
+    } catch (e) {}
+    if (history.length === 0) {
+      showBanner("adminNotice", "Aún no hay evaluaciones registradas en este navegador.", "error");
+      return;
+    }
+    const rows = ["\uFEFFFECHA Y HORA,NOMBRES Y APELLIDOS,CURSO,PARALELO,PUNTAJE SOBRE 45,ACIERTOS,PREGUNTAS FALLADAS"];
+    history.forEach(r => {
+      rows.push('"' + r.fechaHora + '","' + r.nombre + '","' + r.curso + '","' + r.paralelo + '","' + r.puntaje + '","' + r.aciertosTexto + '","' + r.preguntasFalladas + '"');
+    });
+    const csv = rows.join("\r\n");
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Respaldo_Evaluaciones_Lengua_2026.csv";
+    a.click();
+  }
+
+  // ---- Escudo, puntaje animado y navegación de preguntas ----
+  let CREST_DATA = "", CREST_RATIO = 1, qObserver;
+
+  function initCrests() {
+    document.querySelectorAll("[data-school]").forEach(n => { n.textContent = NOMBRE_COLEGIO; });
+    try { const l = localStorage.getItem("escudo_local"); if (l) ESCUDO_URL = l; } catch (e) {}
+    if (!ESCUDO_URL) return;
+    const probe = new Image();
+    probe.onload = () => {
+      CREST_RATIO = probe.naturalWidth / probe.naturalHeight;
+      try {
+        const c = document.createElement("canvas");
+        c.width = probe.naturalWidth; c.height = probe.naturalHeight;
+        c.getContext("2d").drawImage(probe, 0, 0);
+        CREST_DATA = c.toDataURL("image/png");
+      } catch (e) {}
+      document.querySelectorAll("[data-crest]").forEach(slot => {
+        const im = new Image();
+        im.src = ESCUDO_URL; im.alt = "Escudo de " + NOMBRE_COLEGIO;
+        slot.textContent = ""; slot.classList.add("has-img"); slot.appendChild(im);
+      });
+    };
+    probe.src = ESCUDO_URL;
+  }
+
+  function animateScore(total) {
+    const el = document.getElementById("finalScoreValue"), ring = document.getElementById("scoreCircle");
+    const paint = v => { el.textContent = Math.round(v); ring.style.setProperty("--p", (v / 45 * 100) + "%"); };
+    if (total === 0 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { paint(total); return; }
+    const t0 = performance.now();
+    (function step(t) {
+      const k = Math.min(1, (t - t0) / 1100);
+      paint(total * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+
+  function observeQuestions() {
+    if (qObserver) qObserver.disconnect();
+    if (!("IntersectionObserver" in window)) return;
+    qObserver = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      document.querySelectorAll("#qNav .now").forEach(n => n.classList.remove("now"));
+      const b = document.getElementById("qnav-" + e.target.id.split("-")[1]);
+      if (b) b.classList.add("now");
+    }), { rootMargin: "-30% 0px -60% 0px" });
+    document.querySelectorAll(".question-card").forEach(c => qObserver.observe(c));
+  }
+
+  function loadCrestFile(inp) {
+    const f = inp.files && inp.files[0];
+    if (!f) return;
+    if (f.type !== "image/png") { showBanner("adminNotice", "El escudo debe ser un archivo PNG.", "error"); return; }
+    const rd = new FileReader();
+    rd.onload = () => {
+      try { localStorage.setItem("escudo_local", rd.result); }
+      catch (e) { showBanner("adminNotice", "La imagen es muy pesada para guardarla en este navegador. Usa un PNG de menos de 2 MB.", "error"); return; }
+      initCrests();
+      showBanner("adminNotice", "Escudo cargado en este dispositivo.", "success");
+    };
+    rd.readAsDataURL(f);
+  }
+
+  function initTilt() {
+    const bar = document.querySelector(".topbar"), fx = document.querySelector(".topbar .crest-fx");
+    if (!bar || !fx || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const clamp = v => Math.max(-1, Math.min(1, v));
+    bar.addEventListener("pointermove", e => {
+      const r = fx.getBoundingClientRect();
+      fx.style.setProperty("--ry", (clamp((e.clientX - r.left - r.width / 2) / (window.innerWidth / 2)) * 22).toFixed(1) + "deg");
+      fx.style.setProperty("--rx", (-clamp((e.clientY - r.top - r.height / 2) / 120) * 14).toFixed(1) + "deg");
+    });
+    bar.addEventListener("pointerleave", () => { fx.style.setProperty("--rx", "0deg"); fx.style.setProperty("--ry", "0deg"); });
+  }
+
+  window.addEventListener("DOMContentLoaded", () => { initCrests(); initTilt(); });
+</script>
+</body>
+</html>
